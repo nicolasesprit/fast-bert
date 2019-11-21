@@ -104,12 +104,13 @@ def convert_examples_to_features(examples, label_list, max_seq_length,
                 logger.info("Writing example %d of %d" %
                             (ex_index, len(examples)))
 
-        try:
+        #try:
+            logger.info(str(example.text_a))
             tokens_a = tokenizer.tokenize(example.text_a)
-        except:
-            if logger:
-                logger.info("Writing example %d of %d" %(ex_index, len(examples)))
-                logger.info(example.text_a)
+        #except:
+            #if logger:
+            logger.info("Writing example %d of %d" %(ex_index, len(examples)))
+            logger.info(example.text_a)
 
         tokens_b = None
         if example.text_b:
